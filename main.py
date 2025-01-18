@@ -10,7 +10,7 @@ import requests
 # Add this at the top of the file
 VERIFICATION_REQUIRED = os.getenv('VERIFICATION_REQUIRED', 'true').lower() == 'true'
 
-admin_ids = [6025969005, 6018060368]
+admin_ids = [5706788169, 5706788169]
 
 # MongoDB connection
 MONGO_URI = os.getenv('MONGO_URI')  # Get MongoDB URI from environment variables
@@ -153,7 +153,7 @@ async def handle_link(update: Update, context: CallbackContext) -> None:
             # User ko verify karne ki zaroorat hai
             btn = [
                 [InlineKeyboardButton("Verify", url=await get_token(user.id, context.bot.username))],
-                [InlineKeyboardButton("How To Open Link & Verify", url="https://t.me/how_to_download_0011")]
+                [InlineKeyboardButton("How To Open Link & Verify", url="https://t.me/TutorialsNG/5")]
             ]
             await update.message.reply_text(
                 text="🚨 <b>Token Expired!</b>\n\n"
@@ -177,7 +177,7 @@ async def handle_link(update: Update, context: CallbackContext) -> None:
         modified_url = f"https://terabox-player-one.vercel.app/?url=https://www.terabox.tech/play.html?url={parsed_link}"
         link_parts = original_link.split('/')
         link_id = link_parts[-1]
-        sharelink = f"https://t.me/share/url?url=https://t.me/TeraBox_OnlineBot?start=terabox-{link_id}"
+        sharelink = f"https://t.me/share/url?url=https://t.me/TeraBox_Video_Player_Robot?start=terabox-{link_id}"
 
         # Create a button with the modified link
         button = [
@@ -263,14 +263,14 @@ async def get_token(user_id: int, bot_username: str) -> str:
         upsert=True
     )
     # Create verification link
-    verification_link = f"https://telegram.me/{bot_username}?start={token}"
+    verification_link = f"https://telegram.me/TeraBox_Video_Player_Robot?start={token}"
     # Shorten verification link using shorten_url_link function
     shortened_link = shorten_url_link(verification_link)
     return shortened_link
 
 def shorten_url_link(url):
-    api_url = 'https://gplinks.comapi'
-    api_key = '89e6e36b347f3db3f187dda37290c5927e99c18a'
+    api_url = 'https://rglinks.com.com/api'
+    api_key = 'cedfe548e9b4ac8d706ea4e23b86e13a1eaaaa9c'
     params = {
         'api': api_key,
         'url': url
@@ -367,7 +367,7 @@ async def handle_terabox_link(update: Update, context: CallbackContext) -> None:
             # User ko verify karne ki zaroorat hai
             btn = [
                 [InlineKeyboardButton("Verify", url=await get_token(user.id, context.bot.username))],
-                [InlineKeyboardButton("How To Open Link & Verify", url="https://t.me/how_to_download_0011")]
+                [InlineKeyboardButton("How To Open Link & Verify", url="https://t.me/TutorialsNG/5")]
             ]
             await update.message.reply_text(
                 text="🚨 <b>Token Expired!</b>\n\n"
