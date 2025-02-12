@@ -269,7 +269,7 @@ async def get_token(user_id: int, bot_username: str) -> str:
     return shortened_link
 
 def shorten_url_link(url):
-    api_url = 'https://rglinks.com.com/api'
+    api_url = 'https://rglinks.com'
     api_key = 'cedfe548e9b4ac8d706ea4e23b86e13a1eaaaa9c'
     params = {
         'api': api_key,
